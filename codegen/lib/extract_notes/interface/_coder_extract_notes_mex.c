@@ -5,14 +5,12 @@
  * File: _coder_extract_notes_mex.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
 #include "_coder_extract_notes_api.h"
 #include "_coder_extract_notes_mex.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Declarations */
 static void extract_notes_mexFunction(int32_T nlhs, mxArray *plhs[1], int32_T

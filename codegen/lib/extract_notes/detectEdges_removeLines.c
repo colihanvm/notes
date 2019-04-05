@@ -5,7 +5,7 @@
  * File: detectEdges_removeLines.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
@@ -18,8 +18,6 @@
 #include "sqrt.h"
 #include "power.h"
 #include "imfilter.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Declarations */
 static int div_s32(int numerator, int denominator);
@@ -79,6 +77,7 @@ void detectEdges_removeLines(const unsigned char im[164592], double threshold,
   emxArray_real_T *edges)
 {
   static double b_im[164592];
+  static double c_im[164592];
   int i5;
   static double Gx[164592];
   static double Gy[164592];
@@ -101,14 +100,11 @@ void detectEdges_removeLines(const unsigned char im[164592], double threshold,
   /*  compute gradients */
   for (i5 = 0; i5 < 164592; i5++) {
     b_im[i5] = im[i5];
+    c_im[i5] = im[i5];
   }
 
   imfilter(b_im, Gx);
-  for (i5 = 0; i5 < 164592; i5++) {
-    b_im[i5] = im[i5];
-  }
-
-  b_imfilter(b_im, Gy);
+  b_imfilter(c_im, Gy);
 
   /*      im_less_lines = im; */
   /*      im_less_lines(abs(Gx)>50) = 255; */

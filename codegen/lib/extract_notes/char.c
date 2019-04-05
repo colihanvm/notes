@@ -5,7 +5,7 @@
  * File: char.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
@@ -13,8 +13,6 @@
 #include "extract_notes.h"
 #include "char.h"
 #include "extract_notes_emxutil.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Definitions */
 
@@ -26,20 +24,20 @@
 void b_char(const emxArray_real_T *varargin_1, emxArray_char_T *y)
 {
   unsigned int uv0[2];
-  int i7;
+  int i9;
   int loop_ub;
   double d3;
-  for (i7 = 0; i7 < 2; i7++) {
-    uv0[i7] = (unsigned int)varargin_1->size[i7];
+  for (i9 = 0; i9 < 2; i9++) {
+    uv0[i9] = (unsigned int)varargin_1->size[i9];
   }
 
-  i7 = y->size[0] * y->size[1];
+  i9 = y->size[0] * y->size[1];
   y->size[0] = (int)uv0[0];
   y->size[1] = 2;
-  emxEnsureCapacity((emxArray__common *)y, i7, (int)sizeof(char));
+  emxEnsureCapacity((emxArray__common *)y, i9, (int)sizeof(char));
   loop_ub = (int)uv0[0] << 1;
-  for (i7 = 0; i7 < loop_ub; i7++) {
-    d3 = floor(varargin_1->data[i7]);
+  for (i9 = 0; i9 < loop_ub; i9++) {
+    d3 = floor(varargin_1->data[i9]);
     if (rtIsNaN(d3) || rtIsInf(d3)) {
       d3 = 0.0;
     } else {
@@ -47,9 +45,9 @@ void b_char(const emxArray_real_T *varargin_1, emxArray_char_T *y)
     }
 
     if (d3 < 0.0) {
-      y->data[i7] = (signed char)-(signed char)(unsigned char)-d3;
+      y->data[i9] = (signed char)-(signed char)(unsigned char)-d3;
     } else {
-      y->data[i7] = (signed char)(unsigned char)d3;
+      y->data[i9] = (signed char)(unsigned char)d3;
     }
   }
 }

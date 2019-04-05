@@ -5,7 +5,7 @@
  * File: eml_sort.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
@@ -13,8 +13,6 @@
 #include "extract_notes.h"
 #include "eml_sort.h"
 #include "extract_notes_emxutil.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Declarations */
 static void b_eml_sort(double x[164592]);
@@ -790,7 +788,7 @@ static void merge_pow2_block(int idx[164592], double x[164592], int offset)
 void c_eml_sort(emxArray_real_T *x, emxArray_int32_T *idx)
 {
   int dim;
-  int i9;
+  int i11;
   emxArray_real_T *vwork;
   int j;
   int vstride;
@@ -802,14 +800,14 @@ void c_eml_sort(emxArray_real_T *x, emxArray_int32_T *idx)
   }
 
   if (dim <= 1) {
-    i9 = x->size[0];
+    i11 = x->size[0];
   } else {
-    i9 = 1;
+    i11 = 1;
   }
 
   b_emxInit_real_T(&vwork, 1);
   j = vwork->size[0];
-  vwork->size[0] = i9;
+  vwork->size[0] = i11;
   emxEnsureCapacity((emxArray__common *)vwork, j, (int)sizeof(double));
   vstride = x->size[0];
   j = idx->size[0];
@@ -825,12 +823,12 @@ void c_eml_sort(emxArray_real_T *x, emxArray_int32_T *idx)
   j = 0;
   emxInit_int32_T(&iidx, 1);
   while (j + 1 <= vstride) {
-    for (k = 0; k + 1 <= i9; k++) {
+    for (k = 0; k + 1 <= i11; k++) {
       vwork->data[k] = x->data[j + k * vstride];
     }
 
     eml_sort_idx(vwork, iidx);
-    for (k = 0; k + 1 <= i9; k++) {
+    for (k = 0; k + 1 <= i11; k++) {
       x->data[j + k * vstride] = vwork->data[k];
       idx->data[j + k * vstride] = iidx->data[k];
     }

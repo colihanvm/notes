@@ -5,15 +5,13 @@
  * File: rdivide.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
 #include "rt_nonfinite.h"
 #include "extract_notes.h"
 #include "rdivide.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Definitions */
 
@@ -25,9 +23,9 @@
  */
 void rdivide(const double x[164592], const double y[164592], double z[164592])
 {
-  int i6;
-  for (i6 = 0; i6 < 164592; i6++) {
-    z[i6] = x[i6] / y[i6];
+  int i8;
+  for (i8 = 0; i8 < 164592; i8++) {
+    z[i8] = x[i8] / y[i8];
   }
 }
 

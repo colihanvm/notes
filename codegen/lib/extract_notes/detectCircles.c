@@ -5,7 +5,7 @@
  * File: detectCircles.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
@@ -16,8 +16,6 @@
 #include "cosd.h"
 #include "extract_notes_emxutil.h"
 #include "eml_sort.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Definitions */
 

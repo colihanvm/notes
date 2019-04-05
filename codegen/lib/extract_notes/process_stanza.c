@@ -5,7 +5,7 @@
  * File: process_stanza.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
@@ -15,8 +15,6 @@
 #include "std.h"
 #include "sum.h"
 #include "extract_notes_emxutil.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Definitions */
 
@@ -29,9 +27,9 @@
 void process_stanza(emxArray_uint8_T *im_chunk)
 {
   emxArray_real_T *b_im_chunk;
-  int i8;
+  int i10;
   int loop_ub;
-  double dv0[762];
+  double dv4[762];
   double tmp[762];
   double threshold_val;
   short tmp_data[762];
@@ -44,18 +42,18 @@ void process_stanza(emxArray_uint8_T *im_chunk)
   emxInit_real_T(&b_im_chunk, 2);
 
   /* calculate column sum over the stanza */
-  i8 = b_im_chunk->size[0] * b_im_chunk->size[1];
+  i10 = b_im_chunk->size[0] * b_im_chunk->size[1];
   b_im_chunk->size[0] = im_chunk->size[0];
   b_im_chunk->size[1] = 762;
-  emxEnsureCapacity((emxArray__common *)b_im_chunk, i8, (int)sizeof(double));
+  emxEnsureCapacity((emxArray__common *)b_im_chunk, i10, (int)sizeof(double));
   loop_ub = im_chunk->size[0] * im_chunk->size[1];
-  for (i8 = 0; i8 < loop_ub; i8++) {
-    b_im_chunk->data[i8] = im_chunk->data[i8];
+  for (i10 = 0; i10 < loop_ub; i10++) {
+    b_im_chunk->data[i10] = im_chunk->data[i10];
   }
 
-  e_sum(b_im_chunk, dv0);
+  e_sum(b_im_chunk, dv4);
   emxFree_real_T(&b_im_chunk);
-  memcpy(&tmp[0], &dv0[0], 762U * sizeof(double));
+  memcpy(&tmp[0], &dv4[0], 762U * sizeof(double));
 
   /*   figure; plot(tmp);  title('col sum'); */
   /* find value to threshold with */
@@ -79,10 +77,10 @@ void process_stanza(emxArray_uint8_T *im_chunk)
   }
 
   loop_ub = im_chunk->size[0];
-  for (i8 = 0; i8 < trueCount; i8++) {
+  for (i10 = 0; i10 < trueCount; i10++) {
     for (partialTrueCount = 0; partialTrueCount < loop_ub; partialTrueCount++) {
-      im_chunk->data[partialTrueCount + im_chunk->size[0] * (tmp_data[i8] - 1)] =
-        MAX_uint8_T;
+      im_chunk->data[partialTrueCount + im_chunk->size[0] * (tmp_data[i10] - 1)]
+        = MAX_uint8_T;
     }
   }
 
@@ -104,8 +102,8 @@ void process_stanza(emxArray_uint8_T *im_chunk)
         }
 
         loop_ub = im_chunk->size[0];
-        for (i8 = 0; i8 < loop_ub; i8++) {
-          im_chunk->data[i8 + im_chunk->size[0] * i] = MAX_uint8_T;
+        for (i10 = 0; i10 < loop_ub; i10++) {
+          im_chunk->data[i10 + im_chunk->size[0] * i] = MAX_uint8_T;
         }
 
         last = tmp[i];

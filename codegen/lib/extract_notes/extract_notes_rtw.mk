@@ -2,7 +2,7 @@
 ## Makefile generated for MATLAB file/project 'extract_notes'. 
 ## 
 ## Makefile     : extract_notes_rtw.mk
-## Generated on : Fri Apr 05 15:23:19 2019
+## Generated on : Fri Apr 05 17:04:10 2019
 ## MATLAB Coder version: 2.8 (R2015a)
 ## 
 ## Build Info:
@@ -186,7 +186,7 @@ DEFINES = $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/codegen/lib/extract_notes/extract_notes_rtwutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_initialize.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_terminate.c $(START_DIR)/codegen/lib/extract_notes/extract_notes.c $(START_DIR)/codegen/lib/extract_notes/rgb2gray.c $(START_DIR)/codegen/lib/extract_notes/abs.c $(START_DIR)/codegen/lib/extract_notes/rdivide.c $(START_DIR)/codegen/lib/extract_notes/sum.c $(START_DIR)/codegen/lib/extract_notes/std.c $(START_DIR)/codegen/lib/extract_notes/sqrt.c $(START_DIR)/codegen/lib/extract_notes/mod.c $(START_DIR)/codegen/lib/extract_notes/process_stanza.c $(START_DIR)/codegen/lib/extract_notes/detectEdges_removeLines.c $(START_DIR)/codegen/lib/extract_notes/imfilter.c $(START_DIR)/codegen/lib/extract_notes/char.c $(START_DIR)/codegen/lib/extract_notes/padarray.c $(START_DIR)/codegen/lib/extract_notes/power.c $(START_DIR)/codegen/lib/extract_notes/atand.c $(START_DIR)/codegen/lib/extract_notes/detectCircles.c $(START_DIR)/codegen/lib/extract_notes/cosd.c $(START_DIR)/codegen/lib/extract_notes/sind.c $(START_DIR)/codegen/lib/extract_notes/eml_sort.c $(START_DIR)/codegen/lib/extract_notes/repmat.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxAPI.c $(START_DIR)/codegen/lib/extract_notes/rt_nonfinite.c $(START_DIR)/codegen/lib/extract_notes/rtGetNaN.c $(START_DIR)/codegen/lib/extract_notes/rtGetInf.c
+SRCS = $(START_DIR)/codegen/lib/extract_notes/extract_notes_rtwutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_initialize.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_terminate.c $(START_DIR)/codegen/lib/extract_notes/extract_notes.c $(START_DIR)/codegen/lib/extract_notes/rgb2gray.c $(START_DIR)/codegen/lib/extract_notes/abs.c $(START_DIR)/codegen/lib/extract_notes/rdivide.c $(START_DIR)/codegen/lib/extract_notes/sum.c $(START_DIR)/codegen/lib/extract_notes/std.c $(START_DIR)/codegen/lib/extract_notes/sqrt.c $(START_DIR)/codegen/lib/extract_notes/mod.c $(START_DIR)/codegen/lib/extract_notes/process_stanza.c $(START_DIR)/codegen/lib/extract_notes/detectEdges_removeLines.c $(START_DIR)/codegen/lib/extract_notes/imfilter.c $(START_DIR)/codegen/lib/extract_notes/char.c $(START_DIR)/codegen/lib/extract_notes/padarray.c $(START_DIR)/codegen/lib/extract_notes/convn.c $(START_DIR)/codegen/lib/extract_notes/power.c $(START_DIR)/codegen/lib/extract_notes/atand.c $(START_DIR)/codegen/lib/extract_notes/detectCircles.c $(START_DIR)/codegen/lib/extract_notes/cosd.c $(START_DIR)/codegen/lib/extract_notes/sind.c $(START_DIR)/codegen/lib/extract_notes/eml_sort.c $(START_DIR)/codegen/lib/extract_notes/repmat.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxAPI.c $(START_DIR)/codegen/lib/extract_notes/rt_nonfinite.c $(START_DIR)/codegen/lib/extract_notes/rtGetNaN.c $(START_DIR)/codegen/lib/extract_notes/rtGetInf.c
 
 ALL_SRCS = $(SRCS)
 
@@ -194,7 +194,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = extract_notes_rtwutil.o extract_notes_initialize.o extract_notes_terminate.o extract_notes.o rgb2gray.o abs.o rdivide.o sum.o std.o sqrt.o mod.o process_stanza.o detectEdges_removeLines.o imfilter.o char.o padarray.o power.o atand.o detectCircles.o cosd.o sind.o eml_sort.o repmat.o extract_notes_emxutil.o extract_notes_emxAPI.o rt_nonfinite.o rtGetNaN.o rtGetInf.o
+OBJS = extract_notes_rtwutil.o extract_notes_initialize.o extract_notes_terminate.o extract_notes.o rgb2gray.o abs.o rdivide.o sum.o std.o sqrt.o mod.o process_stanza.o detectEdges_removeLines.o imfilter.o char.o padarray.o convn.o power.o atand.o detectCircles.o cosd.o sind.o eml_sort.o repmat.o extract_notes_emxutil.o extract_notes_emxAPI.o rt_nonfinite.o rtGetNaN.o rtGetInf.o
 
 ALL_OBJS = $(OBJS)
 
@@ -208,7 +208,7 @@ PREBUILT_OBJS =
 ## LIBRARIES
 ###########################################################################
 
-LIBS = $(MATLAB_ROOT)/bin/maci64/libmwippfilter.dylib $(MATLAB_ROOT)/bin/maci64/libmwipp.dylib $(MATLAB_ROOT)/bin/maci64/libmwimfilter.dylib $(MATLAB_ROOT)/bin/maci64/libmwnhood.dylib
+LIBS = 
 
 ###########################################################################
 ## SYSTEM LIBRARIES
@@ -267,7 +267,7 @@ execute : download
 # Create a static library         
 #---------------------------------
 
-$(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS)
+$(PRODUCT) : $(OBJS) $(PREBUILT_OBJS)
 	@echo "### Creating static library "$(PRODUCT)" ..."
 	$(AR) $(ARFLAGS)  $(PRODUCT) $(OBJS)
 	@echo "### Created: $(PRODUCT)"

@@ -5,7 +5,7 @@
  * File: extract_notes.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
@@ -24,8 +24,6 @@
 #include "std.h"
 #include "rgb2gray.h"
 #include "extract_notes_rtwutil.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Declarations */
 static void eml_null_assignment(emxArray_real_T *x, const emxArray_boolean_T

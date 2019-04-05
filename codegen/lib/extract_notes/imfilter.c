@@ -5,16 +5,15 @@
  * File: imfilter.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 05-Apr-2019 15:22:58
+ * C/C++ source code generated on  : 05-Apr-2019 17:03:45
  */
 
 /* Include Files */
 #include "rt_nonfinite.h"
 #include "extract_notes.h"
 #include "imfilter.h"
+#include "convn.h"
 #include "padarray.h"
-#include "libmwimfilter.h"
-#include "libmwippfilter.h"
 
 /* Function Definitions */
 
@@ -25,49 +24,18 @@
  */
 void b_imfilter(const double varargin_1[164592], double b[164592])
 {
-  static double a[166116];
-  boolean_T tooBig;
-  int i;
-  double outSize[2];
-  double padSize[2];
-  double kernel[3];
-  double connDims[2];
-  double nonZeroKernel[2];
-  double start[2];
-  static const boolean_T conn[3] = { true, false, true };
-
-  b_padarray(varargin_1, a);
-  tooBig = true;
-  for (i = 0; i < 2; i++) {
-    tooBig = false;
+  double dv2[3];
+  int i7;
+  static double dv3[166116];
+  static double result[166116];
+  for (i7 = 0; i7 < 3; i7++) {
+    dv2[i7] = -1.0 + (double)i7;
   }
 
-  if (!tooBig) {
-    for (i = 0; i < 2; i++) {
-      outSize[i] = 216.0 + 546.0 * (double)i;
-      padSize[i] = 218.0 + 544.0 * (double)i;
-    }
-
-    for (i = 0; i < 3; i++) {
-      kernel[i] = 1.0 - (double)i;
-    }
-
-    for (i = 0; i < 2; i++) {
-      connDims[i] = 3.0 + -2.0 * (double)i;
-    }
-
-    ippfilter_real64(a, b, outSize, 2.0, padSize, kernel, connDims, false);
-  } else {
-    for (i = 0; i < 2; i++) {
-      outSize[i] = 216.0 + 546.0 * (double)i;
-      padSize[i] = 218.0 + 544.0 * (double)i;
-      nonZeroKernel[i] = 1.0 + -2.0 * (double)i;
-      connDims[i] = 3.0 + -2.0 * (double)i;
-      start[i] = 1.0 - (double)i;
-    }
-
-    imfilter_real64(a, b, 2.0, outSize, 2.0, padSize, nonZeroKernel, 2.0, conn,
-                    2.0, connDims, start, 2.0, true, false);
+  b_padarray(varargin_1, dv3);
+  b_convn(dv3, dv2, result);
+  for (i7 = 0; i7 < 762; i7++) {
+    memcpy(&b[216 * i7], &result[1 + 218 * i7], 216U * sizeof(double));
   }
 }
 
@@ -78,49 +46,18 @@ void b_imfilter(const double varargin_1[164592], double b[164592])
  */
 void imfilter(const double varargin_1[164592], double b[164592])
 {
-  static double a[165024];
-  boolean_T tooBig;
-  int i;
-  double outSize[2];
-  double padSize[2];
-  double kernel[3];
-  double connDims[2];
-  double nonZeroKernel[2];
-  double start[2];
-  static const boolean_T conn[3] = { true, false, true };
-
-  padarray(varargin_1, a);
-  tooBig = true;
-  for (i = 0; i < 2; i++) {
-    tooBig = false;
+  double dv0[3];
+  int i6;
+  static double dv1[165024];
+  static double result[165024];
+  for (i6 = 0; i6 < 3; i6++) {
+    dv0[i6] = -1.0 + (double)i6;
   }
 
-  if (!tooBig) {
-    for (i = 0; i < 2; i++) {
-      outSize[i] = 216.0 + 546.0 * (double)i;
-      padSize[i] = 216.0 + 548.0 * (double)i;
-    }
-
-    for (i = 0; i < 3; i++) {
-      kernel[i] = 1.0 - (double)i;
-    }
-
-    for (i = 0; i < 2; i++) {
-      connDims[i] = 1.0 + 2.0 * (double)i;
-    }
-
-    ippfilter_real64(a, b, outSize, 2.0, padSize, kernel, connDims, false);
-  } else {
-    for (i = 0; i < 2; i++) {
-      outSize[i] = 216.0 + 546.0 * (double)i;
-      padSize[i] = 216.0 + 548.0 * (double)i;
-      nonZeroKernel[i] = 1.0 + -2.0 * (double)i;
-      connDims[i] = 1.0 + 2.0 * (double)i;
-      start[i] = i;
-    }
-
-    imfilter_real64(a, b, 2.0, outSize, 2.0, padSize, nonZeroKernel, 2.0, conn,
-                    2.0, connDims, start, 2.0, true, false);
+  padarray(varargin_1, dv1);
+  convn(dv1, dv0, result);
+  for (i6 = 0; i6 < 762; i6++) {
+    memcpy(&b[216 * i6], &result[216 * (1 + i6)], 216U * sizeof(double));
   }
 }
 
