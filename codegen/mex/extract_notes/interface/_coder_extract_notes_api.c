@@ -19,7 +19,7 @@
 #include "libmwippfilter.h"
 
 /* Variable Definitions */
-static emlrtRTEInfo u_emlrtRTEI = { 1, 1, "_coder_extract_notes_api", "" };
+static emlrtRTEInfo x_emlrtRTEI = { 1, 1, "_coder_extract_notes_api", "" };
 
 /* Function Declarations */
 static uint8_T (*c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *im,
@@ -130,7 +130,7 @@ void extract_notes_api(extract_notesStackData *SD, const mxArray * const prhs[4]
 
   st.tls = emlrtRootTLSGlobal;
   emlrtHeapReferenceStackEnterFcnR2012b(&st);
-  emxInit_char_T(&st, &notes, 2, &u_emlrtRTEI, true);
+  emxInit_char_T(&st, &notes, 2, &x_emlrtRTEI, true);
 
   /* Marshall function inputs */
   im = c_emlrt_marshallIn(&st, emlrtAlias(prhs[0]), "im");

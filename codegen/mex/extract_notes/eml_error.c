@@ -17,7 +17,7 @@
 #include "libmwippfilter.h"
 
 /* Variable Definitions */
-static emlrtRTEInfo db_emlrtRTEI = { 20, 5, "eml_error",
+static emlrtRTEInfo ib_emlrtRTEI = { 20, 5, "eml_error",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_error.m" };
 
 /* Function Definitions */
@@ -25,7 +25,7 @@ void eml_error(const emlrtStack *sp)
 {
   static const char_T varargin_1[4] = { 's', 'q', 'r', 't' };
 
-  emlrtErrorWithMessageIdR2012b(sp, &db_emlrtRTEI,
+  emlrtErrorWithMessageIdR2012b(sp, &ib_emlrtRTEI,
     "Coder:toolbox:ElFunDomainError", 3, 4, 4, varargin_1);
 }
 

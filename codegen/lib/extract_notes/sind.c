@@ -5,13 +5,14 @@
  * File: sind.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 /* Include Files */
 #include "rt_nonfinite.h"
 #include "extract_notes.h"
 #include "sind.h"
+#include "extract_notes_rtwutil.h"
 #include "libmwimfilter.h"
 #include "libmwippfilter.h"
 
@@ -28,7 +29,7 @@ void sind(double *x)
   if (!((!rtIsInf(*x)) && (!rtIsNaN(*x)))) {
     *x = rtNaN;
   } else {
-    *x = fmod(*x, 360.0);
+    *x = rt_remd_snf(*x, 360.0);
     absx = fabs(*x);
     if (absx > 180.0) {
       if (*x > 0.0) {

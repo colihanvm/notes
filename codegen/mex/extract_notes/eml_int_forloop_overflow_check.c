@@ -17,7 +17,7 @@
 #include "libmwippfilter.h"
 
 /* Variable Definitions */
-static emlrtRTEInfo gb_emlrtRTEI = { 87, 21, "eml_int_forloop_overflow_check",
+static emlrtRTEInfo jb_emlrtRTEI = { 87, 21, "eml_int_forloop_overflow_check",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m"
 };
 
@@ -26,7 +26,7 @@ void check_forloop_overflow_error(const emlrtStack *sp)
 {
   static const char_T cv2[5] = { 'i', 'n', 't', '3', '2' };
 
-  emlrtErrorWithMessageIdR2012b(sp, &gb_emlrtRTEI,
+  emlrtErrorWithMessageIdR2012b(sp, &jb_emlrtRTEI,
     "Coder:toolbox:int_forloop_overflow", 3, 4, 5, cv2);
 }
 

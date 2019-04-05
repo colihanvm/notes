@@ -5,7 +5,7 @@
  * File: extract_notes_rtwutil.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 /* Include Files */
@@ -16,6 +16,41 @@
 #include "libmwippfilter.h"
 
 /* Function Definitions */
+
+/*
+ * Arguments    : double u0
+ *                double u1
+ * Return Type  : double
+ */
+double rt_remd_snf(double u0, double u1)
+{
+  double y;
+  double b_u1;
+  double tr;
+  if (!((!rtIsNaN(u0)) && (!rtIsInf(u0)) && ((!rtIsNaN(u1)) && (!rtIsInf(u1)))))
+  {
+    y = rtNaN;
+  } else {
+    if (u1 < 0.0) {
+      b_u1 = ceil(u1);
+    } else {
+      b_u1 = floor(u1);
+    }
+
+    if ((u1 != 0.0) && (u1 != b_u1)) {
+      tr = u0 / u1;
+      if (fabs(tr - rt_roundd_snf(tr)) <= DBL_EPSILON * fabs(tr)) {
+        y = 0.0;
+      } else {
+        y = fmod(u0, u1);
+      }
+    } else {
+      y = fmod(u0, u1);
+    }
+  }
+
+  return y;
+}
 
 /*
  * Arguments    : double u

@@ -5,7 +5,7 @@
  * File: detectCircles.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 /* Include Files */
@@ -35,7 +35,7 @@ void detectCircles(const emxArray_real_T *edges, double radius, double top_k,
   int jj;
   static double H[164592];
   int i;
-  double d1;
+  double d2;
   double a;
   double b;
   static double H_sort[164592];
@@ -61,12 +61,12 @@ void detectCircles(const emxArray_real_T *edges, double radius, double top_k,
   for (i = 0; i < edges->size[0]; i++) {
     /* over every edge */
     /* [x, y, mag, ori] = edges(i, :); */
-    d1 = edges->data[i + edges->size[0] * 3];
-    cosd(&d1);
-    a = ceil((edges->data[i] - radius * d1) / 5.0);
-    d1 = edges->data[i + edges->size[0] * 3];
-    sind(&d1);
-    b = ceil((edges->data[i + edges->size[0]] - radius * d1) / 5.0);
+    d2 = edges->data[i + edges->size[0] * 3];
+    cosd(&d2);
+    a = ceil((edges->data[i] - radius * d2) / 5.0);
+    d2 = edges->data[i + edges->size[0] * 3];
+    sind(&d2);
+    b = ceil((edges->data[i + edges->size[0]] - radius * d2) / 5.0);
     if ((a > 0.0) && (b > 0.0) && (a < 216.0) && (b < 762.0)) {
       H[(int)((a - 1.0) + 216.0 * (b - 1.0))]++;
     }

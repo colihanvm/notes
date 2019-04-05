@@ -14,12 +14,9 @@
 #include "extract_notes.h"
 #include "sqrt.h"
 #include "eml_error.h"
+#include "extract_notes_data.h"
 #include "libmwimfilter.h"
 #include "libmwippfilter.h"
-
-/* Variable Definitions */
-static emlrtRSInfo u_emlrtRSI = { 14, "sqrt",
-  "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elfun/sqrt.m" };
 
 /* Function Definitions */
 void b_sqrt(const emlrtStack *sp, real_T x[164592])

@@ -5,7 +5,7 @@
  * File: extract_notes_types.h
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 #ifndef __EXTRACT_NOTES_TYPES_H__
@@ -119,6 +119,27 @@ struct emxArray_real_T
 typedef struct emxArray_real_T emxArray_real_T;
 
 #endif                                 /*typedef_emxArray_real_T*/
+
+#ifndef struct_emxArray_uint8_T
+#define struct_emxArray_uint8_T
+
+struct emxArray_uint8_T
+{
+  unsigned char *data;
+  int *size;
+  int allocatedSize;
+  int numDimensions;
+  boolean_T canFreeData;
+};
+
+#endif                                 /*struct_emxArray_uint8_T*/
+
+#ifndef typedef_emxArray_uint8_T
+#define typedef_emxArray_uint8_T
+
+typedef struct emxArray_uint8_T emxArray_uint8_T;
+
+#endif                                 /*typedef_emxArray_uint8_T*/
 #endif
 
 /*

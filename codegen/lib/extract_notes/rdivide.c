@@ -5,7 +5,7 @@
  * File: rdivide.c
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 /* Include Files */
@@ -25,9 +25,9 @@
  */
 void rdivide(const double x[164592], const double y[164592], double z[164592])
 {
-  int i3;
-  for (i3 = 0; i3 < 164592; i3++) {
-    z[i3] = x[i3] / y[i3];
+  int i6;
+  for (i6 = 0; i6 < 164592; i6++) {
+    z[i6] = x[i6] / y[i6];
   }
 }
 

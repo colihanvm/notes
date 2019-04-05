@@ -1,4 +1,4 @@
-function [edges, Gx] = detectEdges_removeLines(im, threshold, show)
+function [edges, Gx] = detectEdges_removeLines(im, threshold, ~)
       
     %im = rgb2gray(im);
 
@@ -7,7 +7,11 @@ function [edges, Gx] = detectEdges_removeLines(im, threshold, show)
     Gx = imfilter(double(im), fil_x, 'same');    
     fil_y = fil_x';
     Gy = imfilter(double(im), fil_y, 'same');
-              
+    
+%     im_less_lines = im;
+%     im_less_lines(abs(Gx)>50) = 255;
+%     im = im_less_lines;
+
     % compute gradient magnitude
     grad_mag = sqrt(Gx.^2 + Gy.^2);
 
@@ -30,9 +34,9 @@ function [edges, Gx] = detectEdges_removeLines(im, threshold, show)
     not_edge_inds = find(grad_mag(:) < threshold);
     im(not_edge_inds) = 0;
     im(edge_inds) = edge_mag;
-    if (show == 1)
-        figure; imshow(im); title('edge detection'); pause;
-    end;
+%     if (show == 1)
+%         figure; imshow(im); title('edge detection'); 
+%     end;
 
 
     

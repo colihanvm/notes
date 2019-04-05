@@ -19,9 +19,9 @@
 /* Function Definitions */
 void rdivide(const real_T x[164592], const real_T y[164592], real_T z[164592])
 {
-  int32_T i11;
-  for (i11 = 0; i11 < 164592; i11++) {
-    z[i11] = x[i11] / y[i11];
+  int32_T i27;
+  for (i27 = 0; i27 < 164592; i27++) {
+    z[i27] = x[i27] / y[i27];
   }
 }
 

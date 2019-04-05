@@ -12,23 +12,29 @@ SRC_FILES =  \
 	extract_notes_terminate.c \
 	extract_notes.c \
 	rgb2gray.c \
+	abs.c \
 	norm.c \
 	eml_warning.c \
+	char.c \
 	rdivide.c \
 	eml_int_forloop_overflow_check.c \
 	sum.c \
+	std.c \
+	sqrt.c \
+	eml_error.c \
+	mod.c \
+	process_stanza.c \
 	detectEdges_removeLines.c \
 	imfilter.c \
 	padarray.c \
 	power.c \
-	sqrt.c \
-	eml_error.c \
 	atand.c \
 	ind2sub.c \
 	detectCircles.c \
 	cosd.c \
 	sind.c \
 	eml_sort.c \
+	repmat.c \
 	_coder_extract_notes_api.c \
 	_coder_extract_notes_mex.c \
 	extract_notes_emxutil.c \

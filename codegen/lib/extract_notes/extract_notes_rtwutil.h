@@ -5,13 +5,14 @@
  * File: extract_notes_rtwutil.h
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 #ifndef __EXTRACT_NOTES_RTWUTIL_H__
 #define __EXTRACT_NOTES_RTWUTIL_H__
 
 /* Include Files */
+#include <float.h>
 #include <math.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -21,6 +22,7 @@
 #include "extract_notes_types.h"
 
 /* Function Declarations */
+extern double rt_remd_snf(double u0, double u1);
 extern double rt_roundd_snf(double u);
 
 #endif

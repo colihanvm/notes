@@ -19,16 +19,16 @@
 #include "libmwippfilter.h"
 
 /* Variable Definitions */
-static emlrtRSInfo h_emlrtRSI = { 25, "rgb2gray",
+static emlrtRSInfo p_emlrtRSI = { 25, "rgb2gray",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/specfun/rgb2gray.m" };
 
-static emlrtRSInfo i_emlrtRSI = { 27, "inv",
+static emlrtRSInfo q_emlrtRSI = { 27, "inv",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/matfun/inv.m" };
 
-static emlrtRSInfo j_emlrtRSI = { 40, "inv",
+static emlrtRSInfo r_emlrtRSI = { 40, "inv",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/matfun/inv.m" };
 
-static emlrtRSInfo k_emlrtRSI = { 44, "inv",
+static emlrtRSInfo s_emlrtRSI = { 44, "inv",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/matfun/inv.m" };
 
 static emlrtMCInfo c_emlrtMCI = { 29, 23, "eml_flt2str",
@@ -37,7 +37,7 @@ static emlrtMCInfo c_emlrtMCI = { 29, 23, "eml_flt2str",
 static emlrtMCInfo d_emlrtMCI = { 29, 15, "eml_flt2str",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_flt2str.m" };
 
-static emlrtRSInfo pc_emlrtRSI = { 29, "eml_flt2str",
+static emlrtRSInfo fd_emlrtRSI = { 29, "eml_flt2str",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_flt2str.m" };
 
 /* Function Declarations */
@@ -95,9 +95,9 @@ static void g_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId, char_T ret[14])
 {
   int32_T iv4[2];
-  int32_T i14;
-  for (i14 = 0; i14 < 2; i14++) {
-    iv4[i14] = 1 + 13 * i14;
+  int32_T i33;
+  for (i33 = 0; i33 < 2; i33++) {
+    iv4[i33] = 1 + 13 * i33;
   }
 
   emlrtCheckBuiltInR2012b(sp, msgId, src, "char", false, 2U, iv4);
@@ -135,7 +135,7 @@ void rgb2gray(const emlrtStack *sp, const uint8_T X[493776], uint8_T I[164592])
   emlrtStack d_st;
   st.prev = sp;
   st.tls = sp->tls;
-  st.site = &h_emlrtRSI;
+  st.site = &p_emlrtRSI;
   b_st.prev = &st;
   b_st.tls = st.tls;
   c_st.prev = &b_st;
@@ -151,16 +151,16 @@ void rgb2gray(const emlrtStack *sp, const uint8_T X[493776], uint8_T I[164592])
   T[3] = 0.58704307445112125;
   T[4] = -0.27438863574578931;
   T[5] = -0.52291069030297377;
-  b_st.site = &i_emlrtRSI;
+  b_st.site = &q_emlrtRSI;
   n1x = norm(x);
   n1xinv = norm(T);
   rc = 1.0 / (n1x * n1xinv);
   if ((n1x == 0.0) || (n1xinv == 0.0) || (rc == 0.0)) {
-    c_st.site = &j_emlrtRSI;
+    c_st.site = &r_emlrtRSI;
     eml_warning(&c_st);
   } else {
     if (muDoubleScalarIsNaN(rc) || (rc < 2.2204460492503131E-16)) {
-      c_st.site = &k_emlrtRSI;
+      c_st.site = &s_emlrtRSI;
       for (i = 0; i < 8; i++) {
         u[i] = cv0[i];
       }
@@ -178,10 +178,10 @@ void rgb2gray(const emlrtStack *sp, const uint8_T X[493776], uint8_T I[164592])
       d_y = NULL;
       m0 = emlrtCreateDoubleScalar(rc);
       emlrtAssign(&d_y, m0);
-      d_st.site = &pc_emlrtRSI;
+      d_st.site = &fd_emlrtRSI;
       emlrt_marshallIn(&d_st, c_sprintf(&d_st, b_sprintf(&d_st, y, b_y, c_y,
         &c_emlrtMCI), d_y, &d_emlrtMCI), "sprintf", cv1);
-      c_st.site = &k_emlrtRSI;
+      c_st.site = &s_emlrtRSI;
       b_eml_warning(&c_st, cv1);
     }
   }

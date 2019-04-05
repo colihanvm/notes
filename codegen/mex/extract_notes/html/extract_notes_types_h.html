@@ -132,57 +132,79 @@
 <a name="121"><font color="#888888 "><i>  121   </i></font></a>
 <a name="122"><font color="#888888 "><i>  122   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>                                 <font color="#117755"><i>/*typedef_emxArray_real_T*/</i></font>
 <a name="123"><font color="#888888 "><i>  123   </i></font></a>
-<a name="124"><font color="#888888 "><i>  124   </i></font></a><font color="#992211">#</font><font color="#992211"><b>ifndef</b></font> typedef_extract_notesStackData
-<a name="125"><font color="#888888 "><i>  125   </i></font></a><font color="#992211">#</font><font color="#992211"><b>define</b></font> typedef_extract_notesStackData
+<a name="124"><font color="#888888 "><i>  124   </i></font></a><font color="#992211">#</font><font color="#992211"><b>ifndef</b></font> struct_emxArray_uint8_T
+<a name="125"><font color="#888888 "><i>  125   </i></font></a><font color="#992211">#</font><font color="#992211"><b>define</b></font> struct_emxArray_uint8_T
 <a name="126"><font color="#888888 "><i>  126   </i></font></a>
-<a name="127"><font color="#888888 "><i>  127   </i></font></a><font color="#112266"><b>typedef</b></font> <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="128"><font color="#888888 "><i>  128   </i></font></a>  <font color="#112266"><b>union</b></font>
-<a name="129"><font color="#888888 "><i>  129   </i></font></a>  <b>{</b>
-<a name="130"><font color="#888888 "><i>  130   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="131"><font color="#888888 "><i>  131   </i></font></a>      real_T xwork[164592];
-<a name="132"><font color="#888888 "><i>  132   </i></font></a>      int32_T iwork[164592];
-<a name="133"><font color="#888888 "><i>  133   </i></font></a>    <b>}</b> f0;
-<a name="134"><font color="#888888 "><i>  134   </i></font></a>
-<a name="135"><font color="#888888 "><i>  135   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="136"><font color="#888888 "><i>  136   </i></font></a>      real_T a[166116];
-<a name="137"><font color="#888888 "><i>  137   </i></font></a>    <b>}</b> f1;
-<a name="138"><font color="#888888 "><i>  138   </i></font></a>
-<a name="139"><font color="#888888 "><i>  139   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="140"><font color="#888888 "><i>  140   </i></font></a>      real_T a[165024];
-<a name="141"><font color="#888888 "><i>  141   </i></font></a>    <b>}</b> f2;
-<a name="142"><font color="#888888 "><i>  142   </i></font></a>  <b>}</b> u1;
-<a name="143"><font color="#888888 "><i>  143   </i></font></a>
-<a name="144"><font color="#888888 "><i>  144   </i></font></a>  <font color="#112266"><b>union</b></font>
-<a name="145"><font color="#888888 "><i>  145   </i></font></a>  <b>{</b>
-<a name="146"><font color="#888888 "><i>  146   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="147"><font color="#888888 "><i>  147   </i></font></a>      real_T xwork[164592];
-<a name="148"><font color="#888888 "><i>  148   </i></font></a>      int32_T idx[164592];
-<a name="149"><font color="#888888 "><i>  149   </i></font></a>    <b>}</b> f3;
-<a name="150"><font color="#888888 "><i>  150   </i></font></a>
+<a name="127"><font color="#888888 "><i>  127   </i></font></a><font color="#112266"><b>struct</b></font> <a href="#type_emxArray_uint8_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_emxArray_uint8_T');" target="_self"><font color="#1122aa">emxArray_uint8_T</font></a>
+<a name="128"><font color="#888888 "><i>  128   </i></font></a><b>{</b>
+<a name="129"><font color="#888888 "><i>  129   </i></font></a>  uint8_T *data;
+<a name="130"><font color="#888888 "><i>  130   </i></font></a>  int32_T *size;
+<a name="131"><font color="#888888 "><i>  131   </i></font></a>  int32_T allocatedSize;
+<a name="132"><font color="#888888 "><i>  132   </i></font></a>  int32_T numDimensions;
+<a name="133"><font color="#888888 "><i>  133   </i></font></a>  boolean_T canFreeData;
+<a name="134"><font color="#888888 "><i>  134   </i></font></a><b>}</b>;
+<a name="135"><font color="#888888 "><i>  135   </i></font></a>
+<a name="136"><font color="#888888 "><i>  136   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>                                 <font color="#117755"><i>/*struct_emxArray_uint8_T*/</i></font>
+<a name="137"><font color="#888888 "><i>  137   </i></font></a>
+<a name="138"><font color="#888888 "><i>  138   </i></font></a><font color="#992211">#</font><font color="#992211"><b>ifndef</b></font> typedef_emxArray_uint8_T
+<a name="139"><font color="#888888 "><i>  139   </i></font></a><font color="#992211">#</font><font color="#992211"><b>define</b></font> typedef_emxArray_uint8_T
+<a name="140"><font color="#888888 "><i>  140   </i></font></a>
+<a name="141"><font color="#888888 "><i>  141   </i></font></a><font color="#112266"><b>typedef</b></font> <font color="#112266"><b>struct</b></font> <a name="type_emxArray_uint8_T">emxArray_uint8_T</a> <a name="type_emxArray_uint8_T">emxArray_uint8_T</a>;
+<a name="142"><font color="#888888 "><i>  142   </i></font></a>
+<a name="143"><font color="#888888 "><i>  143   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>                                 <font color="#117755"><i>/*typedef_emxArray_uint8_T*/</i></font>
+<a name="144"><font color="#888888 "><i>  144   </i></font></a>
+<a name="145"><font color="#888888 "><i>  145   </i></font></a><font color="#992211">#</font><font color="#992211"><b>ifndef</b></font> typedef_extract_notesStackData
+<a name="146"><font color="#888888 "><i>  146   </i></font></a><font color="#992211">#</font><font color="#992211"><b>define</b></font> typedef_extract_notesStackData
+<a name="147"><font color="#888888 "><i>  147   </i></font></a>
+<a name="148"><font color="#888888 "><i>  148   </i></font></a><font color="#112266"><b>typedef</b></font> <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="149"><font color="#888888 "><i>  149   </i></font></a>  <font color="#112266"><b>union</b></font>
+<a name="150"><font color="#888888 "><i>  150   </i></font></a>  <b>{</b>
 <a name="151"><font color="#888888 "><i>  151   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="152"><font color="#888888 "><i>  152   </i></font></a>      real_T im[164592];
-<a name="153"><font color="#888888 "><i>  153   </i></font></a>      real_T Gx[164592];
-<a name="154"><font color="#888888 "><i>  154   </i></font></a>      real_T Gy[164592];
-<a name="155"><font color="#888888 "><i>  155   </i></font></a>      real_T grad_mag[164592];
-<a name="156"><font color="#888888 "><i>  156   </i></font></a>    <b>}</b> f4;
-<a name="157"><font color="#888888 "><i>  157   </i></font></a>  <b>}</b> u2;
-<a name="158"><font color="#888888 "><i>  158   </i></font></a>
-<a name="159"><font color="#888888 "><i>  159   </i></font></a>  <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="160"><font color="#888888 "><i>  160   </i></font></a>    real_T H[164592];
-<a name="161"><font color="#888888 "><i>  161   </i></font></a>    real_T H_sort[164592];
-<a name="162"><font color="#888888 "><i>  162   </i></font></a>  <b>}</b> f5;
-<a name="163"><font color="#888888 "><i>  163   </i></font></a>
-<a name="164"><font color="#888888 "><i>  164   </i></font></a>  <font color="#112266"><b>struct</b></font> <b>{</b>
-<a name="165"><font color="#888888 "><i>  165   </i></font></a>    real_T im[164592];
-<a name="166"><font color="#888888 "><i>  166   </i></font></a>    uint8_T b_im[164592];
-<a name="167"><font color="#888888 "><i>  167   </i></font></a>  <b>}</b> f6;
-<a name="168"><font color="#888888 "><i>  168   </i></font></a><b>}</b> <a name="type_extract_notesStackData">extract_notesStackData</a>;
-<a name="169"><font color="#888888 "><i>  169   </i></font></a>
-<a name="170"><font color="#888888 "><i>  170   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>                                 <font color="#117755"><i>/*typedef_extract_notesStackData*/</i></font>
-<a name="171"><font color="#888888 "><i>  171   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>
-<a name="172"><font color="#888888 "><i>  172   </i></font></a>
-<a name="173"><font color="#888888 "><i>  173   </i></font></a><font color="#117755"><i>/* End of code generation (extract_notes_types.h) */</i></font>
-<a name="174"><font color="#888888 "><i>  174   </i></font></a></pre>
+<a name="152"><font color="#888888 "><i>  152   </i></font></a>      real_T xwork[164592];
+<a name="153"><font color="#888888 "><i>  153   </i></font></a>      int32_T iwork[164592];
+<a name="154"><font color="#888888 "><i>  154   </i></font></a>    <b>}</b> f0;
+<a name="155"><font color="#888888 "><i>  155   </i></font></a>
+<a name="156"><font color="#888888 "><i>  156   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="157"><font color="#888888 "><i>  157   </i></font></a>      real_T a[166116];
+<a name="158"><font color="#888888 "><i>  158   </i></font></a>    <b>}</b> f1;
+<a name="159"><font color="#888888 "><i>  159   </i></font></a>
+<a name="160"><font color="#888888 "><i>  160   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="161"><font color="#888888 "><i>  161   </i></font></a>      real_T a[165024];
+<a name="162"><font color="#888888 "><i>  162   </i></font></a>    <b>}</b> f2;
+<a name="163"><font color="#888888 "><i>  163   </i></font></a>  <b>}</b> u1;
+<a name="164"><font color="#888888 "><i>  164   </i></font></a>
+<a name="165"><font color="#888888 "><i>  165   </i></font></a>  <font color="#112266"><b>union</b></font>
+<a name="166"><font color="#888888 "><i>  166   </i></font></a>  <b>{</b>
+<a name="167"><font color="#888888 "><i>  167   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="168"><font color="#888888 "><i>  168   </i></font></a>      real_T xwork[164592];
+<a name="169"><font color="#888888 "><i>  169   </i></font></a>      int32_T idx[164592];
+<a name="170"><font color="#888888 "><i>  170   </i></font></a>    <b>}</b> f3;
+<a name="171"><font color="#888888 "><i>  171   </i></font></a>
+<a name="172"><font color="#888888 "><i>  172   </i></font></a>    <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="173"><font color="#888888 "><i>  173   </i></font></a>      real_T im[164592];
+<a name="174"><font color="#888888 "><i>  174   </i></font></a>      real_T Gx[164592];
+<a name="175"><font color="#888888 "><i>  175   </i></font></a>      real_T Gy[164592];
+<a name="176"><font color="#888888 "><i>  176   </i></font></a>      real_T grad_mag[164592];
+<a name="177"><font color="#888888 "><i>  177   </i></font></a>    <b>}</b> f4;
+<a name="178"><font color="#888888 "><i>  178   </i></font></a>  <b>}</b> u2;
+<a name="179"><font color="#888888 "><i>  179   </i></font></a>
+<a name="180"><font color="#888888 "><i>  180   </i></font></a>  <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="181"><font color="#888888 "><i>  181   </i></font></a>    real_T H[164592];
+<a name="182"><font color="#888888 "><i>  182   </i></font></a>    real_T H_sort[164592];
+<a name="183"><font color="#888888 "><i>  183   </i></font></a>  <b>}</b> f5;
+<a name="184"><font color="#888888 "><i>  184   </i></font></a>
+<a name="185"><font color="#888888 "><i>  185   </i></font></a>  <font color="#112266"><b>struct</b></font> <b>{</b>
+<a name="186"><font color="#888888 "><i>  186   </i></font></a>    real_T im[164592];
+<a name="187"><font color="#888888 "><i>  187   </i></font></a>    uint8_T b_im[164592];
+<a name="188"><font color="#888888 "><i>  188   </i></font></a>    uint8_T blank[164592];
+<a name="189"><font color="#888888 "><i>  189   </i></font></a>  <b>}</b> f6;
+<a name="190"><font color="#888888 "><i>  190   </i></font></a><b>}</b> <a name="type_extract_notesStackData">extract_notesStackData</a>;
+<a name="191"><font color="#888888 "><i>  191   </i></font></a>
+<a name="192"><font color="#888888 "><i>  192   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>                                 <font color="#117755"><i>/*typedef_extract_notesStackData*/</i></font>
+<a name="193"><font color="#888888 "><i>  193   </i></font></a><font color="#992211">#</font><font color="#992211"><b>endif</b></font>
+<a name="194"><font color="#888888 "><i>  194   </i></font></a>
+<a name="195"><font color="#888888 "><i>  195   </i></font></a><font color="#117755"><i>/* End of code generation (extract_notes_types.h) */</i></font>
+<a name="196"><font color="#888888 "><i>  196   </i></font></a></pre>
 </td></tr></table>
 </p>
 </body>

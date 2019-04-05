@@ -2,7 +2,7 @@
 ## Makefile generated for MATLAB file/project 'extract_notes'. 
 ## 
 ## Makefile     : extract_notes_rtw.mk
-## Generated on : Tue Apr 02 12:40:43 2019
+## Generated on : Fri Apr 05 15:23:19 2019
 ## MATLAB Coder version: 2.8 (R2015a)
 ## 
 ## Build Info:
@@ -186,7 +186,7 @@ DEFINES = $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/codegen/lib/extract_notes/extract_notes_rtwutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_initialize.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_terminate.c $(START_DIR)/codegen/lib/extract_notes/extract_notes.c $(START_DIR)/codegen/lib/extract_notes/rgb2gray.c $(START_DIR)/codegen/lib/extract_notes/rdivide.c $(START_DIR)/codegen/lib/extract_notes/sum.c $(START_DIR)/codegen/lib/extract_notes/imfilter.c $(START_DIR)/codegen/lib/extract_notes/padarray.c $(START_DIR)/codegen/lib/extract_notes/power.c $(START_DIR)/codegen/lib/extract_notes/sqrt.c $(START_DIR)/codegen/lib/extract_notes/atand.c $(START_DIR)/codegen/lib/extract_notes/detectCircles.c $(START_DIR)/codegen/lib/extract_notes/cosd.c $(START_DIR)/codegen/lib/extract_notes/sind.c $(START_DIR)/codegen/lib/extract_notes/eml_sort.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxAPI.c $(START_DIR)/codegen/lib/extract_notes/rt_nonfinite.c $(START_DIR)/codegen/lib/extract_notes/rtGetNaN.c $(START_DIR)/codegen/lib/extract_notes/rtGetInf.c
+SRCS = $(START_DIR)/codegen/lib/extract_notes/extract_notes_rtwutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_initialize.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_terminate.c $(START_DIR)/codegen/lib/extract_notes/extract_notes.c $(START_DIR)/codegen/lib/extract_notes/rgb2gray.c $(START_DIR)/codegen/lib/extract_notes/abs.c $(START_DIR)/codegen/lib/extract_notes/rdivide.c $(START_DIR)/codegen/lib/extract_notes/sum.c $(START_DIR)/codegen/lib/extract_notes/std.c $(START_DIR)/codegen/lib/extract_notes/sqrt.c $(START_DIR)/codegen/lib/extract_notes/mod.c $(START_DIR)/codegen/lib/extract_notes/process_stanza.c $(START_DIR)/codegen/lib/extract_notes/detectEdges_removeLines.c $(START_DIR)/codegen/lib/extract_notes/imfilter.c $(START_DIR)/codegen/lib/extract_notes/char.c $(START_DIR)/codegen/lib/extract_notes/padarray.c $(START_DIR)/codegen/lib/extract_notes/power.c $(START_DIR)/codegen/lib/extract_notes/atand.c $(START_DIR)/codegen/lib/extract_notes/detectCircles.c $(START_DIR)/codegen/lib/extract_notes/cosd.c $(START_DIR)/codegen/lib/extract_notes/sind.c $(START_DIR)/codegen/lib/extract_notes/eml_sort.c $(START_DIR)/codegen/lib/extract_notes/repmat.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxutil.c $(START_DIR)/codegen/lib/extract_notes/extract_notes_emxAPI.c $(START_DIR)/codegen/lib/extract_notes/rt_nonfinite.c $(START_DIR)/codegen/lib/extract_notes/rtGetNaN.c $(START_DIR)/codegen/lib/extract_notes/rtGetInf.c
 
 ALL_SRCS = $(SRCS)
 
@@ -194,7 +194,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = extract_notes_rtwutil.o extract_notes_initialize.o extract_notes_terminate.o extract_notes.o rgb2gray.o rdivide.o sum.o imfilter.o padarray.o power.o sqrt.o atand.o detectCircles.o cosd.o sind.o eml_sort.o extract_notes_emxutil.o extract_notes_emxAPI.o rt_nonfinite.o rtGetNaN.o rtGetInf.o
+OBJS = extract_notes_rtwutil.o extract_notes_initialize.o extract_notes_terminate.o extract_notes.o rgb2gray.o abs.o rdivide.o sum.o std.o sqrt.o mod.o process_stanza.o detectEdges_removeLines.o imfilter.o char.o padarray.o power.o atand.o detectCircles.o cosd.o sind.o eml_sort.o repmat.o extract_notes_emxutil.o extract_notes_emxAPI.o rt_nonfinite.o rtGetNaN.o rtGetInf.o
 
 ALL_OBJS = $(OBJS)
 

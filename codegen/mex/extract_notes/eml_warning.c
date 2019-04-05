@@ -23,7 +23,7 @@ static emlrtMCInfo emlrtMCI = { 16, 13, "eml_warning",
 static emlrtMCInfo b_emlrtMCI = { 16, 5, "eml_warning",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_warning.m" };
 
-static emlrtRSInfo oc_emlrtRSI = { 16, "eml_warning",
+static emlrtRSInfo ed_emlrtRSI = { 16, "eml_warning",
   "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_warning.m" };
 
 /* Function Declarations */
@@ -64,7 +64,7 @@ static void warning(const emlrtStack *sp, const mxArray *b, emlrtMCInfo
 
 void b_eml_warning(const emlrtStack *sp, const char_T varargin_2[14])
 {
-  int32_T i9;
+  int32_T i25;
   static const char_T varargin_1[33] = { 'C', 'o', 'd', 'e', 'r', ':', 'M', 'A',
     'T', 'L', 'A', 'B', ':', 'i', 'l', 'l', 'C', 'o', 'n', 'd', 'i', 't', 'i',
     'o', 'n', 'e', 'd', 'M', 'a', 't', 'r', 'i', 'x' };
@@ -81,29 +81,29 @@ void b_eml_warning(const emlrtStack *sp, const char_T varargin_2[14])
   emlrtStack st;
   st.prev = sp;
   st.tls = sp->tls;
-  for (i9 = 0; i9 < 33; i9++) {
-    u[i9] = varargin_1[i9];
+  for (i25 = 0; i25 < 33; i25++) {
+    u[i25] = varargin_1[i25];
   }
 
   y = NULL;
   m2 = emlrtCreateCharArray(2, iv2);
   emlrtInitCharArrayR2013a(sp, 33, m2, &u[0]);
   emlrtAssign(&y, m2);
-  for (i9 = 0; i9 < 14; i9++) {
-    b_u[i9] = varargin_2[i9];
+  for (i25 = 0; i25 < 14; i25++) {
+    b_u[i25] = varargin_2[i25];
   }
 
   b_y = NULL;
   m2 = emlrtCreateCharArray(2, iv3);
   emlrtInitCharArrayR2013a(sp, 14, m2, &b_u[0]);
   emlrtAssign(&b_y, m2);
-  st.site = &oc_emlrtRSI;
+  st.site = &ed_emlrtRSI;
   warning(&st, b_message(&st, y, b_y, &emlrtMCI), &b_emlrtMCI);
 }
 
 void eml_warning(const emlrtStack *sp)
 {
-  int32_T i8;
+  int32_T i24;
   static const char_T varargin_1[27] = { 'C', 'o', 'd', 'e', 'r', ':', 'M', 'A',
     'T', 'L', 'A', 'B', ':', 's', 'i', 'n', 'g', 'u', 'l', 'a', 'r', 'M', 'a',
     't', 'r', 'i', 'x' };
@@ -116,15 +116,15 @@ void eml_warning(const emlrtStack *sp)
   emlrtStack st;
   st.prev = sp;
   st.tls = sp->tls;
-  for (i8 = 0; i8 < 27; i8++) {
-    u[i8] = varargin_1[i8];
+  for (i24 = 0; i24 < 27; i24++) {
+    u[i24] = varargin_1[i24];
   }
 
   y = NULL;
   m1 = emlrtCreateCharArray(2, iv1);
   emlrtInitCharArrayR2013a(sp, 27, m1, &u[0]);
   emlrtAssign(&y, m1);
-  st.site = &oc_emlrtRSI;
+  st.site = &ed_emlrtRSI;
   warning(&st, message(&st, y, &emlrtMCI), &b_emlrtMCI);
 }
 

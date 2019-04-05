@@ -5,13 +5,14 @@
  * File: eml_sort.h
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 #ifndef __EML_SORT_H__
 #define __EML_SORT_H__
 
 /* Include Files */
+#include <float.h>
 #include <math.h>
 #include <stddef.h>
 #include <stdlib.h>

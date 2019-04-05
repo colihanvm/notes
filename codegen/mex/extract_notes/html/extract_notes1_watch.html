@@ -11,24 +11,24 @@
 </tr>
 </thead>
 <tbody onmouseover="watchMouseOver(event);" onmouseout="watchMouseOut(event);" onclick="watchClick(event);">
-<tr class="var type1" id="S2T202">
+<tr class="var type1" id="S2T210">
 <td id="blank"></td><td>1</td>
 <td id=""><a href="#">notes</a></td>
-<td>Output</td><td class="watchsize" id="41"><b>:</b>? x 2</td>
+<td>Output</td><td class="watchsize" id="45"><b>:</b>? x 2</td>
 <td class="watchclass">char</td>
 <td class="watchcomplex">-</td>
 </tr>
 <tr class="var type1" id="S3T1">
 <td id="blank"></td><td>2</td>
 <td id=""><a href="#">im &gt; 1</a></td>
-<td>Input</td><td class="watchsize" id="31">216 x 762 x 3</td>
+<td>Input</td><td class="watchsize" id="35">216 x 762 x 3</td>
 <td class="watchclass">uint8</td>
 <td class="watchcomplex">No</td>
 </tr>
 <tr class="var type1" id="S3T21">
 <td id="blank"></td><td>3</td>
 <td id=""><a href="#">im &gt; 2</a></td>
-<td>Local</td><td class="watchsize" id="30">216 x 762</td>
+<td>Local</td><td class="watchsize" id="34">216 x 762</td>
 <td class="watchclass">uint8</td>
 <td class="watchcomplex">No</td>
 </tr>
@@ -70,147 +70,308 @@
 <tr class="var type1" id="S11T22">
 <td id="blank"></td><td>9</td>
 <td id=""><a href="#">double_im</a></td>
-<td>Local</td><td class="watchsize" id="30">216 x 762</td>
+<td>Local</td><td class="watchsize" id="34">216 x 762</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
 <tr class="var type1" id="S13T25">
 <td id="blank"></td><td>10</td>
 <td id=""><a href="#">tmp</a></td>
-<td>Local</td><td class="watchsize" id="29">216 x 1</td>
+<td>Local</td><td class="watchsize" id="33">216 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S15T203">
+<tr class="var type1" id="S15T2">
 <td id="blank"></td><td>11</td>
-<td id=""><a href="#">ind</a></td>
-<td>Local</td><td class="watchsize" id="43"><b>:</b>216 x 1</td>
+<td id=""><a href="#">mean_val</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S17T36">
+<tr class="var type1" id="S16T2">
 <td id="blank"></td><td>12</td>
-<td id=""><a href="#">staffs</a></td>
-<td>Local</td><td class="watchsize" id="28">10 x 1</td>
+<td id=""><a href="#">std_val</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S19T203">
+<tr class="var type1" id="S18T2">
 <td id="blank"></td><td>13</td>
-<td id=""><a href="#">lines</a></td>
-<td>Local</td><td class="watchsize" id="43"><b>:</b>216 x 1</td>
+<td id=""><a href="#">threshold_val</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S20T2">
+<tr class="var type1" id="S19T211">
 <td id="blank"></td><td>14</td>
-<td id=""><a href="#">num</a></td>
-<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td id=""><a href="#">ind</a></td>
+<td>Local</td><td class="watchsize" id="48"><b>:</b>216 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S21T36">
+<tr class="var type1" id="S21T38">
 <td id="blank"></td><td>15</td>
-<td id=""><a href="#">staff_num</a></td>
-<td>Local</td><td class="watchsize" id="28">10 x 1</td>
+<td id=""><a href="#">staffs</a></td>
+<td>Local</td><td class="watchsize" id="29">10 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S23T2">
+<tr class="var type1" id="S23T211">
 <td id="blank"></td><td>16</td>
-<td id=""><a href="#">lines_passed</a></td>
-<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td id=""><a href="#">lines</a></td>
+<td>Local</td><td class="watchsize" id="48"><b>:</b>216 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
 <tr class="var type1" id="S24T2">
 <td id="blank"></td><td>17</td>
+<td id=""><a href="#">num</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S25T38">
+<td id="blank"></td><td>18</td>
+<td id=""><a href="#">staff_num</a></td>
+<td>Local</td><td class="watchsize" id="29">10 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S27T39">
+<td id="blank"></td><td>19</td>
+<td id=""><a href="#">all_notes</a></td>
+<td>Local</td><td class="watchsize" id="40">164592 x 1</td>
+<td class="watchclass">uint8</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S28T2">
+<td id="blank"></td><td>20</td>
+<td id=""><a href="#">note_threshold</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S29T2">
+<td id="blank"></td><td>21</td>
+<td id=""><a href="#">lines_passed</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S30T42">
+<td id="blank"></td><td>22</td>
+<td id=""><a href="#">staff_heights</a></td>
+<td>Local</td><td class="watchsize" id="28">8 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S31T2">
+<td id="blank"></td><td>23</td>
+<td id=""><a href="#">h</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S32T2">
+<td id="blank"></td><td>24</td>
 <td id=""><a href="#">s</a></td>
 <td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S25T2">
-<td id="blank"></td><td>18</td>
+<tr class="var type1" id="S33T2">
+<td id="blank"></td><td>25</td>
 <td id=""><a href="#">above_s</a></td>
 <td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S26T2">
-<td id="blank"></td><td>19</td>
+<tr class="var type1" id="S34T2">
+<td id="blank"></td><td>26</td>
 <td id=""><a href="#">below_s</a></td>
 <td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S27T2">
-<td id="blank"></td><td>20</td>
+<tr class="var type1" id="S35T2">
+<td id="blank"></td><td>27</td>
 <td id=""><a href="#">x</a></td>
 <td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S28T204">
-<td id="blank"></td><td>21</td>
-<td id=""><a href="#">edges</a></td>
-<td>Local</td><td class="watchsize" id="46"><b>:</b>164592 x 4</td>
+<tr class="var type1" id="S37T2">
+<td id="blank"></td><td>28</td>
+<td id=""><a href="#">avg_staff_height</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S30T2">
-<td id="blank"></td><td>22</td>
+<tr class="var type1" id="S38T2">
+<td id="blank"></td><td>29</td>
 <td id=""><a href="#">acc</a></td>
 <td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S31T194">
-<td id="blank"></td><td>23</td>
+<tr class="var type1" id="S39T202">
+<td id="blank"></td><td>30</td>
 <td id=""><a href="#">centers</a></td>
-<td>Local</td><td class="watchsize" id="41"><b>:</b>? x 2</td>
+<td>Local</td><td class="watchsize" id="45"><b>:</b>? x 2</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S33T35">
-<td id="blank"></td><td>24</td>
-<td id=""><a href="#">in</a></td>
-<td>Local</td><td class="watchsize" id="40"><b>:</b>? x 1</td>
+<tr class="var type1" id="S40T2">
+<td id="blank"></td><td>31</td>
+<td id=""><a href="#">num_stanza</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S35T35">
-<td id="blank"></td><td>25</td>
-<td id=""><a href="#">resort</a></td>
-<td>Local</td><td class="watchsize" id="40"><b>:</b>? x 1</td>
+<tr class="var type1" id="S41T2">
+<td id="blank"></td><td>32</td>
+<td id=""><a href="#">stanza</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S36T194">
-<td id="blank"></td><td>26</td>
-<td id=""><a href="#">temp</a></td>
-<td>Local</td><td class="watchsize" id="41"><b>:</b>? x 2</td>
+<tr class="var type1" id="S42T21">
+<td id="blank"></td><td>33</td>
+<td id=""><a href="#">blank</a></td>
+<td>Local</td><td class="watchsize" id="34">216 x 762</td>
+<td class="watchclass">uint8</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S45T2">
+<td id="blank"></td><td>34</td>
+<td id=""><a href="#">chunk_start</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>
-<tr class="var type1" id="S37T196">
-<td id="blank"></td><td>27</td>
-<td id=""><a href="#">scale &gt; 1</a></td>
-<td>Local</td><td class="watchsize" id="27">5 x 1</td>
+<tr class="var type1" id="S46T2">
+<td id="blank"></td><td>35</td>
+<td id=""><a href="#">chunk_end</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S47T212">
+<td id="blank"></td><td>36</td>
+<td id=""><a href="#">im_chunk</a></td>
+<td>Local</td><td class="watchsize" id="49"><b>:</b>216 x 762</td>
+<td class="watchclass">uint8</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S49T213">
+<td id="blank"></td><td>37</td>
+<td id=""><a href="#">edges</a></td>
+<td>Local</td><td class="watchsize" id="52"><b>:</b>164592 x 4</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S51T202">
+<td id="blank"></td><td>38</td>
+<td id=""><a href="#">chunk_centers</a></td>
+<td>Local</td><td class="watchsize" id="45"><b>:</b>? x 2</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S53T37">
+<td id="blank"></td><td>39</td>
+<td id=""><a href="#">sort_ind</a></td>
+<td>Local</td><td class="watchsize" id="44"><b>:</b>? x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S55T36">
+<td id="blank"></td><td>40</td>
+<td id=""><a href="#">extras</a></td>
+<td>Local</td><td class="watchsize" id="44"><b>:</b>? x 1</td>
+<td class="watchclass">logical</td>
+<td class="watchcomplex">-</td>
+</tr>
+<tr class="var type1" id="S57T2">
+<td id="blank"></td><td>41</td>
+<td id=""><a href="#">c</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S59T2">
+<td id="blank"></td><td>42</td>
+<td id=""><a href="#">top</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S60T2">
+<td id="blank"></td><td>43</td>
+<td id=""><a href="#">bottom</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S61T205">
+<td id="blank"></td><td>44</td>
+<td id=""><a href="#">full_staffs</a></td>
+<td>Local</td><td class="watchsize" id="31">26 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S62T206">
+<td id="blank"></td><td>45</td>
+<td id=""><a href="#">scale</a></td>
+<td>Local</td><td class="watchsize" id="30">13 x 2</td>
 <td class="watchclass">char</td>
 <td class="watchcomplex">-</td>
 </tr>
-<tr class="var type1" id="S37T199">
-<td id="blank"></td><td>28</td>
-<td id=""><a href="#">scale &gt; 2</a></td>
-<td>Local</td><td class="watchsize" id="28">10 x 1</td>
+<tr class="var type1" id="S63T209">
+<td id="blank"></td><td>46</td>
+<td id=""><a href="#">full_scale</a></td>
+<td>Local</td><td class="watchsize" id="32">26 x 2</td>
 <td class="watchclass">char</td>
 <td class="watchcomplex">-</td>
 </tr>
-<tr class="var type1" id="S39T194">
-<td id="blank"></td><td>29</td>
-<td id=""><a href="#">int_notes</a></td>
-<td>Local</td><td class="watchsize" id="41"><b>:</b>? x 2</td>
+<tr class="var type1" id="S65T2">
+<td id="blank"></td><td>47</td>
+<td id=""><a href="#">full_start</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S66T2">
+<td id="blank"></td><td>48</td>
+<td id=""><a href="#">staff_start</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S67T2">
+<td id="blank"></td><td>49</td>
+<td id=""><a href="#">l</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S68T2">
+<td id="blank"></td><td>50</td>
+<td id=""><a href="#">p</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S70T205">
+<td id="blank"></td><td>51</td>
+<td id=""><a href="#">diff</a></td>
+<td>Local</td><td class="watchsize" id="31">26 x 1</td>
+<td class="watchclass">double</td>
+<td class="watchcomplex">No</td>
+</tr>
+<tr class="var type1" id="S71T2">
+<td id="blank"></td><td>52</td>
+<td id=""><a href="#">min_in</a></td>
+<td>Local</td><td class="watchsize" id="4">1 x 1</td>
 <td class="watchclass">double</td>
 <td class="watchcomplex">No</td>
 </tr>

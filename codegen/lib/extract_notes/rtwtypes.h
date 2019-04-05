@@ -5,7 +5,7 @@
  * File: rtwtypes.h
  *
  * MATLAB Coder version            : 2.8
- * C/C++ source code generated on  : 02-Apr-2019 12:40:25
+ * C/C++ source code generated on  : 05-Apr-2019 15:22:58
  */
 
 #ifndef __RTWTYPES_H__
@@ -20,7 +20,7 @@
  *                       long:  64    long long:  64
  *                       native word size:  64
  *   Byte ordering: LittleEndian
- *   Signed integer division rounds to: Zero
+ *   Signed integer division rounds to: Undefined
  *   Shift right on a signed integer as arithmetic shift: on
  *=======================================================================*/
 

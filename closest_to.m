@@ -1,26 +1,18 @@
-%notes(i)=closest_to(centers(i,2),staffs,scale); 
-function [note] = closest_to(y, staffs, scale)
+%C4-A5
 
-%note = '0';
+%notes(i,:)=closest_to(centers(i,2),full_staffs,full_scale, avg_staff_height); 
+function [note] = closest_to(y, staffs, scale, avg_staff_height)
+%     note = '00';
+    diff = staffs - y;
+%     less = abs(diff)<avg_staff_height/2;
+%     score = sum(less);
+    [~, min_in] = min(abs(diff));
 
-diff = staffs - y;
-less = abs(diff)<5;
-score = sum(less);
-
-if score == 1
-    if scale(less)=='E'
-        if y > staff + 2
-            note = '0';
-        else
-            note = strcat(scale(less),'0');
-        end
-    end
-elseif score == 2
-    note = scale(less);
-    note = strcat(note(1),note(2));
-else
-    note = '0';
-end
-
+    note = scale(min_in,:);
+%     if score == 1
+%         note = scale(less,:);
+%     elseif score > 1
+%         note = scale(min_in,:);
+%     end
 end
 

@@ -16,7 +16,7 @@
 <a name="5"><font color="#888888 "><i>    5   </i></font></a><font color="#117755"><I> * File: eml_sort.c</i></font>
 <a name="6"><font color="#888888 "><i>    6   </i></font></a><font color="#117755"><I> *</i></font>
 <a name="7"><font color="#888888 "><i>    7   </i></font></a><font color="#117755"><I> * MATLAB Coder version            : 2.8</i></font>
-<a name="8"><font color="#888888 "><i>    8   </i></font></a><font color="#117755"><I> * C/C++ source code generated on  : 02-Apr-2019 12:40:25</i></font>
+<a name="8"><font color="#888888 "><i>    8   </i></font></a><font color="#117755"><I> * C/C++ source code generated on  : 05-Apr-2019 15:22:58</i></font>
 <a name="9"><font color="#888888 "><i>    9   </i></font></a><font color="#117755"><I> */</i></font>
 <a name="10"><font color="#888888 "><i>   10   </i></font></a>
 <a name="11"><font color="#888888 "><i>   11   </i></font></a><font color="#117755"><i>/* Include Files */</i></font>
@@ -801,7 +801,7 @@
 <a name="790"><font color="#888888 "><i>  790   </i></font></a><font color="#112266"><b>void</b></font> <a name="fcn_c_eml_sort">c_eml_sort</a>(<a href="extract_notes_types_h.html#type_emxArray_real_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_emxArray_real_T');" target="_self"><font color="#1122aa">emxArray_real_T</font></a> *x, <a href="extract_notes_types_h.html#type_emxArray_int32_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_emxArray_int32_T');" target="_self"><font color="#1122aa">emxArray_int32_T</font></a> *idx)
 <a name="791"><font color="#888888 "><i>  791   </i></font></a><b>{</b>
 <a name="792"><font color="#888888 "><i>  792   </i></font></a>  <font color="#112266"><b>int</b></font> dim;
-<a name="793"><font color="#888888 "><i>  793   </i></font></a>  <font color="#112266"><b>int</b></font> i4;
+<a name="793"><font color="#888888 "><i>  793   </i></font></a>  <font color="#112266"><b>int</b></font> i9;
 <a name="794"><font color="#888888 "><i>  794   </i></font></a>  <a href="extract_notes_types_h.html#type_emxArray_real_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_emxArray_real_T');" target="_self"><font color="#1122aa">emxArray_real_T</font></a> *vwork;
 <a name="795"><font color="#888888 "><i>  795   </i></font></a>  <font color="#112266"><b>int</b></font> j;
 <a name="796"><font color="#888888 "><i>  796   </i></font></a>  <font color="#112266"><b>int</b></font> vstride;
@@ -813,14 +813,14 @@
 <a name="802"><font color="#888888 "><i>  802   </i></font></a>  <b>}</b>
 <a name="803"><font color="#888888 "><i>  803   </i></font></a>
 <a name="804"><font color="#888888 "><i>  804   </i></font></a>  <font color="#112266"><b>if</b></font> (dim &lt;= 1) <b>{</b>
-<a name="805"><font color="#888888 "><i>  805   </i></font></a>    i4 = x-&gt;size[0];
+<a name="805"><font color="#888888 "><i>  805   </i></font></a>    i9 = x-&gt;size[0];
 <a name="806"><font color="#888888 "><i>  806   </i></font></a>  <b>}</b> <font color="#112266"><b>else</b></font> <b>{</b>
-<a name="807"><font color="#888888 "><i>  807   </i></font></a>    i4 = 1;
+<a name="807"><font color="#888888 "><i>  807   </i></font></a>    i9 = 1;
 <a name="808"><font color="#888888 "><i>  808   </i></font></a>  <b>}</b>
 <a name="809"><font color="#888888 "><i>  809   </i></font></a>
 <a name="810"><font color="#888888 "><i>  810   </i></font></a>  <a href="extract_notes_emxutil_c.html#fcn_b_emxInit_real_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_b_emxInit_real_T');" target="_self"><font color="#1122aa">b_emxInit_real_T</font></a>(&amp;vwork, 1);
 <a name="811"><font color="#888888 "><i>  811   </i></font></a>  j = vwork-&gt;size[0];
-<a name="812"><font color="#888888 "><i>  812   </i></font></a>  vwork-&gt;size[0] = i4;
+<a name="812"><font color="#888888 "><i>  812   </i></font></a>  vwork-&gt;size[0] = i9;
 <a name="813"><font color="#888888 "><i>  813   </i></font></a>  <a href="extract_notes_emxutil_c.html#fcn_emxEnsureCapacity" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_emxEnsureCapacity');" target="_self"><font color="#1122aa">emxEnsureCapacity</font></a>((<a href="extract_notes_types_h.html#type_emxArray__common" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_emxArray__common');" target="_self"><font color="#1122aa">emxArray__common</font></a> *)vwork, j, (<font color="#112266"><b>int</b></font>)<font color="#112266"><b>sizeof</b></font>(<font color="#112266"><b>double</b></font>));
 <a name="814"><font color="#888888 "><i>  814   </i></font></a>  vstride = x-&gt;size[0];
 <a name="815"><font color="#888888 "><i>  815   </i></font></a>  j = idx-&gt;size[0];
@@ -836,12 +836,12 @@
 <a name="825"><font color="#888888 "><i>  825   </i></font></a>  j = 0;
 <a name="826"><font color="#888888 "><i>  826   </i></font></a>  <a href="extract_notes_emxutil_c.html#fcn_emxInit_int32_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_emxInit_int32_T');" target="_self"><font color="#1122aa">emxInit_int32_T</font></a>(&amp;iidx, 1);
 <a name="827"><font color="#888888 "><i>  827   </i></font></a>  <font color="#112266"><b>while</b></font> (j + 1 &lt;= vstride) <b>{</b>
-<a name="828"><font color="#888888 "><i>  828   </i></font></a>    <font color="#112266"><b>for</b></font> (k = 0; k + 1 &lt;= i4; k++) <b>{</b>
+<a name="828"><font color="#888888 "><i>  828   </i></font></a>    <font color="#112266"><b>for</b></font> (k = 0; k + 1 &lt;= i9; k++) <b>{</b>
 <a name="829"><font color="#888888 "><i>  829   </i></font></a>      vwork-&gt;data[k] = x-&gt;data[j + k * vstride];
 <a name="830"><font color="#888888 "><i>  830   </i></font></a>    <b>}</b>
 <a name="831"><font color="#888888 "><i>  831   </i></font></a>
 <a name="832"><font color="#888888 "><i>  832   </i></font></a>    <a href="#fcn_eml_sort_idx" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_eml_sort_idx');" target="_self"><font color="#1122aa">eml_sort_idx</font></a>(vwork, iidx);
-<a name="833"><font color="#888888 "><i>  833   </i></font></a>    <font color="#112266"><b>for</b></font> (k = 0; k + 1 &lt;= i4; k++) <b>{</b>
+<a name="833"><font color="#888888 "><i>  833   </i></font></a>    <font color="#112266"><b>for</b></font> (k = 0; k + 1 &lt;= i9; k++) <b>{</b>
 <a name="834"><font color="#888888 "><i>  834   </i></font></a>      x-&gt;data[j + k * vstride] = vwork-&gt;data[k];
 <a name="835"><font color="#888888 "><i>  835   </i></font></a>      idx-&gt;data[j + k * vstride] = iidx-&gt;data[k];
 <a name="836"><font color="#888888 "><i>  836   </i></font></a>    <b>}</b>
