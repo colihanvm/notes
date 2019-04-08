@@ -1,6 +1,6 @@
 function [im_chunk] = process_stanza(im_chunk)
 
-%original chunk
+% original chunk
 % figure; imshow(im_chunk)
 
 %calculate column sum over the stanza

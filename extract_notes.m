@@ -1,10 +1,12 @@
-close all;
-
-threshold = 155;
- im = imread('img/lond_mod2.jpg');
+% radius = 5.4;
+% num_find = 19;
+% threshold = 155;
 % im = imread('img/rowrowbt_mod3.png');
+% im = imread('img/lond_mod2.jpg');
+function [notes] = extract_notes(im, threshold, num_find, radius)
+
 im = rgb2gray(im);
-og = im;
+
 for i=1:size(im,1)
     for j=1:size(im,2)
         if im(i,j) > 240
@@ -13,29 +15,20 @@ for i=1:size(im,1)
     end
 end
 
-
-
-%  figure; imshow(im); title('pixel color adjust');
-
 %% 
 
 double_im = double(im);
 tmp = sum(double_im, 2);
-%   figure; plot(tmp);  title('row sum');
-% 
-% pause;
+
+
 mean_val = sum(tmp)/size(tmp,1);
 std_val = std(tmp);
 threshold_val = mean_val - 2 * std_val;
 
-ind = find(tmp < threshold_val); %147000);%
+ind = find(tmp < threshold_val);
 
 %actually delete the staffs
 im(ind, :) = 255;
-
-%figure; imshow(im); title('lines erased');
- 
-%pause;
 
 %% 
 
@@ -72,10 +65,6 @@ for i=2:size(ind,1)
         
     end
 end
-
-
-% figure; imshow(im); title('visualization of no staff lines'); hold on
-%pause;
 
 %%
 
@@ -120,25 +109,15 @@ avg_staff_height = sum(staff_heights)/size(staff_heights,1);
 
 %%
 
-% figure; imshow(im); title('visualization of slightly more lines'); hold on
+%do work by chunks in this section
 
-
-% figure; imshow(im); title('visualization of staff lines'); hold on
-% plot(x, staffs*ones(size(x)));
-% 
-% pause;
-
-
-%%
-
-radius = 5.4; %pretty good for 4th, 8th
-num = 19; 
-acc = 25/27;
+% radius = 5.4; %pretty good for 4th, 8th
+% num = 19; 
+acc = 1;
 
 %%%%%%%%%%%%%% TO DO: preallocate centers array 
 centers = [];
-x=1:size(im,2);
-blank = uint8(255 * ones(size(im)));
+
 %remove vertical lines by stanza, using process_stanza() function.
 num_stanza = size(staffs,1)/5;
 for stanza=1:num_stanza
@@ -150,12 +129,13 @@ for stanza=1:num_stanza
     
     blank(chunk_start:chunk_end, :) = im_chunk;
     edges = detectEdges_removeLines(blank, threshold, 0);
-    chunk_centers = detectCircles(blank, edges, radius, num, acc);
+    chunk_centers = detectCircles(blank, edges, radius, num_find, acc);
    
     %sort by x
     [~, sort_ind] = sort(chunk_centers(:,1));
     chunk_centers = chunk_centers (sort_ind,:);
     
+    %post processing of this chunk
     %first, remove the random perimeter circles that tend to pop up
     chunk_centers(chunk_centers(:,1) > size(im,2) - radius, :) = [];
     chunk_centers(chunk_centers(:,2) > size(im,1) - radius, :) = [];
@@ -164,10 +144,6 @@ for stanza=1:num_stanza
     chunk_centers(chunk_centers(:,2) < radius, :) = [];
     
     extras = false(size(chunk_centers,1), 1);
-    
-    figure; imshow(blank)
-    viscircles(chunk_centers, radius * ones(size(chunk_centers, 1), 1)); hold on
-
     %check every circle c:
     for c=2:size(chunk_centers,1)
         if (chunk_centers(c,1) == chunk_centers(c-1,1))
@@ -180,13 +156,8 @@ for stanza=1:num_stanza
             end
         end
     end
+    %remove the circles we just flagged
     chunk_centers(extras,:) = [];
-    
-    naughty = zeros(size(chunk_centers,1),1);
-    
-        figure; imshow(blank)
-    viscircles(chunk_centers, radius * ones(size(chunk_centers, 1), 1)); hold on
-
 
     %final post processing
     %TODO: better benchmarks
@@ -195,32 +166,18 @@ for stanza=1:num_stanza
         bottom = sum(blank(chunk_centers(c,2):chunk_centers(c,2)+floor(radius),chunk_centers(c,1)));
         left = sum(blank(chunk_centers(c,2),chunk_centers(c,1)-floor(radius):chunk_centers(c,1)));
         right = sum(blank(chunk_centers(c,2),chunk_centers(c,1):chunk_centers(c,1)+floor(radius)));
-        
         if (top-bottom < -900)
             chunk_centers(c,:) = [chunk_centers(c,1), chunk_centers(c,2) - radius/2];
-            naughty(c) = top-bottom;
         elseif (top-bottom < -500)
             chunk_centers(c,:) = [chunk_centers(c,1), chunk_centers(c,2) - radius/2];
-            naughty(c) = top-bottom;
         elseif (top-bottom > 900)
             chunk_centers(c,:) = [chunk_centers(c,1), chunk_centers(c,2) + radius/2];
-            naughty(c) = top-bottom;
         elseif (top-bottom > 500)
             if (left-right > 900)
-                %check for friggin half note
+                %check for tangential half note
                 if (blank(chunk_centers(c,2) + floor(radius*0.7), chunk_centers(c,1) + floor(radius*0.7)) > 200)
-%                     side_left = sum(blank(chunk_centers(c,2)-floor(radius):chunk_centers(c,2)+floor(radius),chunk_centers(c,1)-floor(radius)));
-%                     side_right = sum(blank(chunk_centers(c,2)-floor(radius):chunk_centers(c,2)+floor(radius),chunk_centers(c,1)+floor(radius)));
-%                     if side_left < side_right
-%                         chunk_centers(c,:) = [chunk_centers(c,1) - radius/4, chunk_centers(c,2) - radius/4];
-%                     else
-%                         chunk_centers(c,:) = [chunk_centers(c,1) + radius/4, chunk_centers(c,2) + radius/4];
-%                     end
                      chunk_centers(c,:) = [chunk_centers(c,1) + radius/2, chunk_centers(c,2) + radius/2];
                 end
-            else
-%                 chunk_centers(c,:) = [chunk_centers(c,1), chunk_centers(c,2) + radius/2];
-%                 naughty(c) = top-bottom;
             end
             
         elseif (top == bottom && blank(chunk_centers(c,2),chunk_centers(c,1)) == 255)
@@ -229,35 +186,29 @@ for stanza=1:num_stanza
             bottom = sum(blank(chunk_centers(c,2):chunk_centers(c,2)+floor(radius),chunk_centers(c,1)));
             if (top-bottom < -900)
                 chunk_centers(c,:) = [chunk_centers(c,1), chunk_centers(c,2) - radius/2];
-                naughty(c) = top-bottom;
             elseif (top-bottom > 900)
                 chunk_centers(c,:) = [chunk_centers(c,1), chunk_centers(c,2) + radius/2];
-                naughty(c) = top-bottom;
             end
         end
     end
   
-%     figure; imshow(blank)
-%     viscircles(chunk_centers, radius * ones(size(chunk_centers, 1), 1)); hold on    
-
     centers = [centers; chunk_centers];
     im(chunk_start:chunk_end, :) = im_chunk;
 end
 
-figure; imshow(og)
-viscircles(centers, radius * ones(size(centers, 1), 1)); hold on
-plot(x, staffs*ones(size(x)));
+% x=1:size(im,2);
+% figure; imshow(og)
+% viscircles(centers, radius * ones(size(centers, 1), 1)); hold on
+% plot(x, staffs*ones(size(x)));
 
 %%
 % create full staffs and etc.
 %TODO: preallocate full_staffs for 1 or 2 stanzas
 full_staffs = zeros((size(staffs,1) + 3) * (size(staffs,1)/5),1);
-% scale = ['F';'D';'B';'G';'E'];
 scale = ['A6';'G5';'F5';'E5';'D5';'C5';'B5';'A5';'G4';'F4';'E4';'D4';'C4'];
 num_stanza = size(full_staffs,1)/size(scale,1);
 full_scale = repmat(scale, num_stanza, 1);
-pitch = 3;
-line = 1;
+
 for stanza=1:num_stanza
     full_start = 1 + (size(scale,1) * (stanza-1));
     staff_start = 1 + (size(staffs,1)/num_stanza * (stanza-1));
@@ -284,5 +235,10 @@ end
 notes = char(ones(size(centers,1),1) * '00');
 
 for i=1:size(centers,1)
-     notes(i,:)=closest_to(centers(i,2), full_staffs, full_scale, avg_staff_height); 
+    diff = full_staffs - centers(i,2);
+    [~, min_in] = min(abs(diff));
+
+    notes(i,:) = full_scale(min_in,:);
+end
+
 end
